@@ -51,7 +51,7 @@ The line `Include /conf/sites-enabled` will be added to your main conf file and 
 [Virtual Host]: http://httpd.apache.org/docs/2.4/vhosts/
 
   __a2dismod site__
-* _site_ - The conf file to moved to sites-disabled
+* _site_ - The conf file to move to sites-disabled
 * _-norestart_ - Don't restart the web server on completion
 
 Move the specified site's conf file to ServerRoot\conf\sites-available from ServerRoot\conf\sites-enabled.
@@ -63,7 +63,7 @@ See the file at ServerRoot\conf\extra\httpd-vhosts.conf for an example Virtual H
 
 ## Examples
 	a2enmod ssl
-Enable the mod_ssl.so module. If it’s not in the default modules folder, look for it in the current directory and copy it to the modules folder
+Enable the mod_ssl.so module. If it’s not in the default modules folder, look for it in the current directory and copy it to the modules folder.
 
 	a2enmod mod_ssl C:\my\folder
 Enable the mod_ssl.so module, first looking for it in the default modules folder and then in `C:\my\folder`. If it’s in the specified folder, copy it to the default modules folder before enabling it.
@@ -75,7 +75,7 @@ Copy the mod_ssl.so module from the specified folder into the default modules fo
 Enable the mod_ssl.so module, but don’t restart the web server.
 
 	a2dismod ssl
-Disable the mod_ssl.so module
+Disable the mod_ssl.so module.
 
 ***********
 	
@@ -83,7 +83,7 @@ Disable the mod_ssl.so module
 Enables the site contained in the file mysite.conf. If it’s not in the sites-available folder, look for it in the current directory and move it to the sites-enabled folder.
 
 	a2ensite mysite.conf C:\my\folder
-Enable the mysite.conf site, first looking for the file in sites-available and then in the `C:\my\folder`. If it’s in the specified folder, copy it to the default modules folder before enabling it.
+Enable the mysite.conf site, first looking for the file in sites-available and then in `C:\my\folder`. If it’s in the specified folder, copy it to the default modules folder before enabling it.
 
 	a2ensite mysite C:\my\folder –a[dd]
 Copy the mysite.conf from the specified folder into sites-enabled, then enable it.

@@ -11,6 +11,9 @@ A PowerShell script for working with modules and sites on the [Apache Web Server
 ## Installation
 To use the `a2enmod`, `a2dismod`, `a2ensite`, and `a2dissite` commands, make sure to do the following:
 
+* Run CMD.exe as an Administrator
+* Navigate to the directory with a2enmod.ps1
+* Run setup.bat from the command line to create the symbolic links and the .gitignore
 * Run Powershell as an Administrator
 * Run the command `set–executionpolicy unrestricted –scope process` to allow the execution of PowerShell scripts just in the current session
 * Make sure httpd.exe is in your path

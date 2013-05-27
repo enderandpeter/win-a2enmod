@@ -1,5 +1,5 @@
 @echo off
-mklink "a2dismod.ps1" "a2enmod.ps1"
+mklink a2dismod.ps1 a2enmod.ps1
 mklink a2ensite.ps1 a2enmod.ps1
 mklink a2dissite.ps1 a2enmod.ps1
 

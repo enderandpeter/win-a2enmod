@@ -68,7 +68,7 @@ Enable the mod_ssl.so module. If it’s not in the default modules folder, look 
 	a2enmod mod_ssl C:\my\folder
 Enable the mod_ssl.so module, first looking for it in the default modules folder and then in `C:\my\folder`. If it’s in the specified folder, copy it to the default modules folder before enabling it.
 
-	a2enmod mod_ssl.so C:\my\folder –a[dd]
+	a2enmod mod_ssl.so C:\my\folder –a
 Copy the mod_ssl.so module from the specified folder into the default modules folder, then enable it.
 
 	a2enmod ssl –norestart
@@ -85,7 +85,7 @@ Enables the site contained in the file mysite.conf. If it’s not in the sites-a
 	a2ensite mysite.conf C:\my\folder
 Enable the mysite.conf site, first looking for the file in sites-available and then in `C:\my\folder`. If it’s in the specified folder, copy it to the default modules folder before enabling it.
 
-	a2ensite mysite C:\my\folder –a[dd]
+	a2ensite mysite C:\my\folder –add
 Copy the mysite.conf from the specified folder into sites-enabled, then enable it.
 
 	a2ensite mysite –norestart

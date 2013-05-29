@@ -15,7 +15,7 @@ To use the `a2enmod`, `a2dismod`, `a2ensite`, and `a2dissite` commands, make sur
 * Navigate to the directory with a2enmod.ps1
 * Run setup.bat from the command line to create the symbolic links and the .gitignore
 * Run Powershell as an Administrator
-* Run the command `set–executionpolicy unrestricted –scope process` to allow the execution of PowerShell scripts just in the current session
+* Run the command `set-executionpolicy unrestricted -scope process` to allow the execution of PowerShell scripts just in the current session
 * Make sure httpd.exe is in your path
 * Make sure your Windows user account has full access to the ServerRoot directory as assigned in the main Apache config file
 
@@ -39,7 +39,7 @@ Adds a comment marker to the LoadModule line of the specified module to disable 
 
 ***********
 
-  __a2ensite site [location] [-a[dd]]__
+  __a2ensite site [location] [-a[dd]] [-norestart]__
 * _site_ - The conf file with a [Virtual Host] block that defines the site. Moved to sites-enabled
 * _location_ - The location to look for the conf file if not found in the default directory
 * _-add_ - Force script to move the site conf file from the location to the default directory
@@ -50,7 +50,7 @@ The line `Include /conf/sites-enabled` will be added to your main conf file and 
 
 [Virtual Host]: http://httpd.apache.org/docs/2.4/vhosts/
 
-  __a2dismod site__
+  __a2dismod site [-norestart]__
 * _site_ - The conf file to move to sites-disabled
 * _-norestart_ - Don't restart the web server on completion
 

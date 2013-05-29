@@ -23,7 +23,7 @@ You will find it easiest to add the directory containing the script and symbolic
 
 ## Usage  
 
-  __a2enmod module [location] [-a[dd] [-norestart]__
+  __a2enmod module [location] [-a[dd]] [-norestart]__
 * _module_ - The module to enable or add
 * _location_ - The location to look for the module file if not found in the default directory
 * _-add_ - Force script to copy the module file from the location to the default directory

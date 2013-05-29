@@ -4,7 +4,7 @@ A PowerShell script for working with modules and sites on the [Apache Web Server
 [Apache Web Server]: http://httpd.apache.org/
 
 ## Why not just use XAMPP to manage Apache on Windows?
-[XAMPP][] is a wonderful tool for managing your web server, but they don't always support the latest versions of the software they bundle. At the moment, for example, XAMPP 1.8.1 only supports Apache 2.4.3 (instead of the most recent stable version 2.4.4, which they *"recommend over all previous releases"*) and PHP 5.4.7 (not yet the current 5.4.15). Many web admins prefer the latest stable versions and this script lets you use a simple command line program that offers the same functionality as the Debian utility.
+[XAMPP][] is a wonderful tool for managing your web server, but they don't always support the latest versions of the software they bundle. At the moment, XAMPP 1.8.1 only supports Apache 2.4.3 (instead of the most recent stable version 2.4.4, which they *"recommend over all previous releases"*) and PHP 5.4.7 (not yet the current 5.4.15). Many web admins prefer the latest stable versions and this script lets you use a simple command line program that offers the same functionality as the Debian utility.
 
 [XAMPP]: http://www.apachefriends.org/en/xampp-windows.html
 
@@ -25,7 +25,7 @@ You will find it easiest to add the directory containing the script and symbolic
 
   __a2enmod module [location] [-a[dd]] [-norestart]__
 * _module_ - The module to enable or add
-* _location_ - The location to look for the module file if not found in the default directory
+* _location_ - The location to look for the module file if not found in the default directory (ServerRoot\modules)
 * _-add_ - Force script to copy the module file from the location to the default directory
 * _-norestart_ - Don't restart the web server on completion
 
@@ -40,13 +40,13 @@ Adds a comment marker to the LoadModule line of the specified module to disable 
 ***********
 
   __a2ensite site [location] [-a[dd]] [-norestart]__
-* _site_ - The conf file with a [Virtual Host] block that defines the site. Moved to sites-enabled
+* _site_ - The conf file with a [Virtual Host] block that defines the site. Moved to sites-enabled (default directory) if not already there.
 * _location_ - The location to look for the conf file if not found in the default directory
 * _-add_ - Force script to move the site conf file from the location to the default directory
 * _-norestart_ - Don't restart the web server on completion
 
 Move the specified site's conf file to ServerRoot\conf\sites-enabled from either _location_ or the current directory if not found in ServerRoot\conf\sites-available. `-add` will force the script to either find the file in the current or specified location or fail.
-The line `Include /conf/sites-enabled` will be added to your main conf file and the /conf/sites-available and /conf/sites-enabled directories will be created if they don't already exist.
+
 
 [Virtual Host]: http://httpd.apache.org/docs/2.4/vhosts/
 
@@ -57,8 +57,11 @@ The line `Include /conf/sites-enabled` will be added to your main conf file and 
 Move the specified site's conf file to ServerRoot\conf\sites-available from ServerRoot\conf\sites-enabled.
 
 ## Notes
-Module and site names can only be files of type `.so` or `.conf`, respectively, and may be specified by either their basename or filename with extension. Additionally, modules can be referred to by the part of their name following the prefix “mod_”. 
-See the file at ServerRoot\conf\extra\httpd-vhosts.conf for an example Virtual Host configuration. All commands restart the web server on successful complestion unless the `-norestart` flag is given.
+Module and site names can only refer to files of type `.so` or `.conf`, respectively, and may be specified by either their basename or filename with extension. Additionally, modules can be referred to by the part of their name following the prefix “mod_”.
+
+The line `Include /conf/sites-enabled` will be added to your main conf file and the /conf/sites-available and /conf/sites-enabled directories will be created if they don't already exist. See the file at ServerRoot\conf\extra\httpd-vhosts.conf for an example Virtual Host configuration.
+
+All commands restart the web server on successful completion unless the `-norestart` flag is given.
 
 
 ## Examples
@@ -80,7 +83,7 @@ Disable the mod_ssl.so module.
 ***********
 	
 	a2ensite mysite
-Enables the site contained in the file mysite.conf. If it’s not in the sites-available folder, look for it in the current directory and move it to the sites-enabled folder.
+Enables the site defined in the file mysite.conf. If it’s not in the sites-available folder, look for it in the current directory and move it to the sites-enabled folder.
 
 	a2ensite mysite.conf C:\my\folder
 Enable the mysite.conf site, first looking for the file in sites-available and then in `C:\my\folder`. If it’s in the specified folder, copy it to the default modules folder before enabling it.
@@ -98,4 +101,4 @@ Disable the mysite.conf site.
 <img src="http://aninternetpresence.net/github/win_a2en_usage.PNG" style="border:none"/>
 
 ## Disclaimer
-This is a work in progress. Please feel free to contribute. You will inevitably notice some kinks and oddities in its operation, which I aim to improve. I would really like to get an optional GUI going or something like that, as it would be much nicer to run something to click these options rather than always type them. Please let me know if you have trouble using this, or have any suggestions. Thank you for trying out my first GitHub repository.
+This is a work in progress. Please feel free to contribute. You will inevitably notice some kinks and oddities in its operation, which I aim to improve. I would really like to get an optional GUI going or something like that, as it would be much nicer to run something to click these options rather than always type them. Please let me know if you have trouble using this, or have any suggestions. Thank you for trying out this project.

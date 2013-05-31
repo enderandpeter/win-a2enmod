@@ -106,4 +106,4 @@ Disable the mysite.conf site.
 <img src="http://aninternetpresence.net/github/win_a2en_usage.PNG" style="border:none"/>
 
 ## Disclaimer
-This is a work in progress. Please feel free to contribute. You will inevitably notice some kinks and oddities in its operation, which I aim to improve. I would really like to get an optional GUI going or something like that, as it would be much nicer to run something to click these options rather than always type them. Please let me know if you have trouble using this, or have any suggestions. Thank you for trying out this project.
+This is a work in progress. Please feel free to contribute. You will inevitably notice some kinks and oddities in its operation, which I aim to improve. I would really like to get an optional GUI going or something like that, as it would be much nicer to run something to click these options rather than always type them. Please let me know if you have trouble using this, or have any suggestions. Pull requests are more than welcome. Thank you for trying out this project.

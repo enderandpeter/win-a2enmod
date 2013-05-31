@@ -1,7 +1,8 @@
 # win-a2enmod
-A PowerShell script for working with modules and sites on the [Apache Web Server][] for Windows. It was inspired by the a2enmod perl script for Debian written by Stefan Fritsch. It employs some similar tactics as the original a2enmod, such as a single script referred to by different names by way of symbolic links, but it was written independently and specifically for PowerShell as a way to provide a powerful script ideal for the Windows environment that employs the Linux philosophy of tools that do one thing and do it well.
+A PowerShell script for working with modules and sites on the [Apache Web Server][] for Windows. It was inspired by the a2enmod perl script for Debian written by [Stefan Fritsch][]. It employs some similar tactics as the original a2enmod, such as a single script referred to by different names by way of symbolic links, but it was written independently and specifically for PowerShell as a way to provide a powerful script ideal for the Windows environment that employs the Linux philosophy of tools that do one thing and do it well.
 
 [Apache Web Server]: http://httpd.apache.org/
+[Stefan Fritsch]: http://www.sfritsch.de/
 
 ## Why not just use XAMPP to manage Apache on Windows?
 [XAMPP][] is a wonderful tool for managing your web server, but they don't always support the latest versions of the software they bundle. At the moment, XAMPP 1.8.1 only supports Apache 2.4.3 (instead of the most recent stable version 2.4.4, which they *"recommend over all previous releases"*) and PHP 5.4.7 (not yet the current 5.4.15). Many web admins prefer the latest stable versions and this script lets you use a simple command line program that offers the same functionality as the Debian utility.

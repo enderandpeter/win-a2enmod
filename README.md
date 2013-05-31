@@ -53,7 +53,7 @@ Move the specified site's conf file to ServerRoot\conf\sites-enabled from either
 
   __a2dismod [-mod] \<String\> [-norestart]__
 * _mod_ - The conf file to move to sites-disabled
-* _-norestart_ - Don't restart the web server on completion
+* _norestart_ - Don't restart the web server on completion
 
 Move the specified site's conf file to ServerRoot\conf\sites-available from ServerRoot\conf\sites-enabled.
 

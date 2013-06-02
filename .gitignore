@@ -1,6 +1,10 @@
+# Ignore anything that starts with a dot
+# except .gitignore and .gitattributes
 .*
 !.gitignore
 !.gitattributes
+
+# Ignore the symlinks
 a2dismod.ps1
 a2ensite.ps1
 a2dissite.ps1

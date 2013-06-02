@@ -1,0 +1,6 @@
+.*
+!.gitignore
+!.gitattributes
+a2dismod.ps1
+a2ensite.ps1
+a2dissite.ps1

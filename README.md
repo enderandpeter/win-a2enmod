@@ -24,7 +24,7 @@ You will find it easiest to add the directory containing the script and symbolic
 
 ## Usage  
 
-  __a2enmod [-mod] \<String\> [-search] \<String\> [-a[dd]] [-norestart]__
+  __a2enmod [[-mod] \<String\>] [[-search] \<String\>] [-a[dd]] [-norestart]__
 * _mod_ - The module to enable or add
 * _search_ - The location in which to look for the module file if not found in the default directory (ServerRoot\modules)
 * _add_ - Force script to copy the module file from the search location to the default directory
@@ -32,7 +32,7 @@ You will find it easiest to add the directory containing the script and symbolic
 
 Locates the specified module and uncomments its LoadModule line to enable it. If the module is not in ServerRoot\modules, the script looks in _location_ or the current directory for the module. `-add` will force the script to either find the file in the current or specified location or fail.
 	
-  __a2dismod [-mod] \<String\> [-norestart]__
+  __a2dismod [[-mod] \<String\>] [-norestart]__
 * _mod_ - The module to add
 * _norestart_ - Don't restart the web server on completion
 
@@ -40,7 +40,7 @@ Adds a comment marker to the LoadModule line of the specified module to disable 
 
 ***********
 
-  __a2ensite [-mod] \<String\> [-search] \<String\> [-a[dd]] [-norestart]__
+  __a2ensite [[-mod] \<String\>] [[-search] \<String\>] [-a[dd]] [-norestart]__
 * _mod_ - The conf file with a [Virtual Host] block that defines the site. Moved to sites-enabled (default directory) if not already there.
 * _search_ - The location in which to look for the conf file if not found in the default directory
 * _add_ - Force script to move the site conf file from the location to the default directory
@@ -51,7 +51,7 @@ Move the specified site's conf file to ServerRoot\conf\sites-enabled from either
 
 [Virtual Host]: http://httpd.apache.org/docs/2.4/vhosts/
 
-  __a2dismod [-mod] \<String\> [-norestart]__
+  __a2dismod [[-mod] \<String\>] [-norestart]__
 * _mod_ - The conf file to move to sites-disabled
 * _norestart_ - Don't restart the web server on completion
 
@@ -70,6 +70,8 @@ If you use `-norestart` when overwriting an enabled module with the `-add` optio
 
 
 ## Examples
+	a2enmod
+Show information about enabled and disabled modules
 	a2enmod ssl
 Enable the mod_ssl.so module. If it’s not in the default modules folder, look for it in the current directory and copy it to the modules folder.
 
@@ -86,7 +88,9 @@ Enable the mod_ssl.so module, but don’t restart the web server.
 Disable the mod_ssl.so module.
 
 ***********
-	
+	a2ensite
+Show information about enabled and disabled sites
+
 	a2ensite mysite
 Enables the site defined in the file mysite.conf. If it’s not in the sites-available folder, look for it in the current directory and move it to the sites-enabled folder.
 

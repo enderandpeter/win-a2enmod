@@ -72,6 +72,7 @@ If you use `-norestart` when overwriting an enabled module with the `-add` optio
 ## Examples
 	a2enmod
 Show information about enabled and disabled modules
+
 	a2enmod ssl
 Enable the mod_ssl.so module. If it’s not in the default modules folder, look for it in the current directory and copy it to the modules folder.
 

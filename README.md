@@ -30,7 +30,7 @@ You will find it easiest to add the directory containing the script and symbolic
 * _add_ - Force script to copy the module file from the search location to the default directory
 * _norestart_ - Don't restart the web server on completion
 
-Locates the specified module and uncomments its LoadModule line to enable it. If the module is not in ServerRoot\modules, the script looks in _location_ or the current directory for the module. `-add` will force the script to either find the file in the current or specified location or fail.
+Locates the specified module and uncomments its LoadModule line to enable it. If the module is not in ServerRoot\modules, the script looks in _search_ or the current directory for the module. `-add` will force the script to either find the file in the current or specified location or fail.
 	
   __a2dismod [[-mod] \<String\>] [-norestart]__
 * _mod_ - The module to add
@@ -46,7 +46,7 @@ Adds a comment marker to the LoadModule line of the specified module to disable 
 * _add_ - Force script to move the site conf file from the location to the default directory
 * _norestart_ - Don't restart the web server on completion
 
-Move the specified site's conf file to ServerRoot\conf\sites-enabled from either _location_ or the current directory if not found in ServerRoot\conf\sites-available. `-add` will force the script to either find the file in the current or specified location or fail.
+Move the specified site's conf file to ServerRoot\conf\sites-enabled from either _search_ or the current directory if not found in ServerRoot\conf\sites-available. `-add` will force the script to either find the file in the current or specified location or fail.
 
 
 [Virtual Host]: http://httpd.apache.org/docs/2.4/vhosts/
@@ -58,9 +58,9 @@ Move the specified site's conf file to ServerRoot\conf\sites-enabled from either
 Move the specified site's conf file to ServerRoot\conf\sites-available from ServerRoot\conf\sites-enabled.
 
 ## Notes
-Module and site names can only refer to files of type `.so` or `.conf`, respectively, and may be specified by either their basename or filename with extension. Additionally, modules can be referred to by the part of their name following the prefix “mod_”.
+Module and site names can only refer to files of type `.so` or `.conf`, respectively, and may be specified by either their basename or filename with extension. Modules can also be referred to by the part of their name following the prefix “mod_”.
 
-The line `Include /conf/sites-enabled` will be added to your main conf file and the /conf/sites-available and /conf/sites-enabled directories will be created if they don't already exist. See the file at ServerRoot\conf\extra\httpd-vhosts.conf for an example Virtual Host configuration.
+The line `Include /conf/sites-enabled` will be added to your main conf file and the sites-available and sites-enabled directories will be created if they don't already exist. See the file at ServerRoot\conf\extra\httpd-vhosts.conf for an example Virtual Host configuration.
 
 All commands restart the web server on successful completion unless the `-norestart` flag is given.
 
@@ -68,10 +68,12 @@ a2enmod will not create a `LoadModule` line for new modules added with `-add`.
 
 If you use `-norestart` when overwriting an enabled module with the `-add` option, the script will ask if you’d like to restart the web server in order to overwrite the file. Saying “No” will exit.
 
+The commands without parameters will display info about the modules or sites.
+
 
 ## Examples
 	a2enmod
-Show information about enabled and disabled modules
+Show information about enabled and disabled modules.
 
 	a2enmod ssl
 Enable the mod_ssl.so module. If it’s not in the default modules folder, look for it in the current directory and copy it to the modules folder.
@@ -90,7 +92,7 @@ Disable the mod_ssl.so module.
 
 ***********
 	a2ensite
-Show information about enabled and disabled sites
+Show information about enabled and disabled sites.
 
 	a2ensite mysite
 Enables the site defined in the file mysite.conf. If it’s not in the sites-available folder, look for it in the current directory and move it to the sites-enabled folder.
@@ -99,7 +101,7 @@ Enables the site defined in the file mysite.conf. If it’s not in the sites-ava
 Enable the mysite.conf site, first looking for the file in sites-available and then in `C:\my\folder`. If it’s in the specified folder, copy it to the default modules folder before enabling it.
 
 	a2ensite mysite C:\my\folder –add
-Copy the mysite.conf from the specified folder into sites-enabled, then enable it.
+Copy mysite.conf from the specified folder into sites-enabled, then enable it.
 
 	a2ensite mysite –norestart
 Enable the site in mysite.conf, but don’t restart the web server.

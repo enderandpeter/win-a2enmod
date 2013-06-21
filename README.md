@@ -51,7 +51,7 @@ Move the specified site's conf file to ServerRoot\conf\sites-enabled from either
 
 [Virtual Host]: http://httpd.apache.org/docs/2.4/vhosts/
 
-  __a2dismod [[-mod] \<String\>] [-norestart]__
+  __a2dissite [[-mod] \<String\>] [-norestart]__
 * _mod_ - The conf file to move to sites-disabled
 * _norestart_ - Don't restart the web server on completion
 

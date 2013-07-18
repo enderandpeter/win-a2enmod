@@ -91,7 +91,7 @@ Function includeSiteDir{
     }
         
     if(!$hasline){
-        write-host -foregroundcolor GREEN "Adding sites directory to config..."
+        write-host -foregroundcolor GREEN "Adding site directories to config..."
         $includeline = "`n" + $includeline
         add-content $conf $includeline
     }
@@ -128,7 +128,7 @@ if(!$mod){
             # Ask the user to add site configurations to the folders if they were just now made
             if(!$conf_dir.getdirectories("sites-available") -or !$conf_dir.getdirectories("sites-enabled")){
                  makeSiteDirs
-                 write-host -foregroundcolor yellow "Site directories created. Please create a .conf file based on $conf_dir\extra\httpd-vhosts.conf and add it with `"a2ensite [file]`"".
+                 write-host -foregroundcolor yellow "Site directories created. Please make a .conf file based on $conf_dir\extra\httpd-vhosts.conf and add it with `"a2ensite [file]`"."
                  exit
             } else {
                 $sitesavailable = $conf_dir.getdirectories("sites-available")[0]

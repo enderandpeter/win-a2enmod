@@ -6,9 +6,10 @@ A PowerShell script for working with modules and sites on the [Apache Web Server
 
 ## Why not just use XAMPP to manage Apache on Windows?
 [XAMPP][] is a wonderful tool for managing your web server, but they don't always support the latest versions of the software
-they bundle. At the moment, XAMPP 1.8.1 only supports Apache 2.4.3 (instead of the most recent stable version 2.4.4, 
-which they *"recommend over all previous releases"*) and PHP 5.4.7. They will upgrade these programs in newer versions, but not always to the most recent. Many web admins prefer the latest stable versions and this script lets 
-you use a simple command line program that offers the same functionality as the Debian utility.
+they bundle. For example, XAMPP 1.8.1 only supported Apache 2.4.3 (instead of the most recent stable version at the time, 2.4.4,
+which they *"recommend over all previous releases"*). They will upgrade these programs in newer versions, but not always to the
+most recent. Many web admins prefer the latest stable versions and this script lets you use a simple command line program that
+offers similar functionality as the Debian utility.
 
 [XAMPP]: http://www.apachefriends.org/en/xampp-windows.html
 

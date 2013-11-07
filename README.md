@@ -20,7 +20,7 @@ To use the `a2enmod`, `a2dismod`, `a2ensite`, and `a2dissite` commands, make sur
 * Navigate to the directory with a2enmod.ps1
 * Run setup.bat from the command line to create the symbolic links
 * Run Powershell as an Administrator
-* Run the command `set-executionpolicy unrestricted -scope process` to allow the execution of PowerShell scripts just in the current session
+* Run the command `set-executionpolicy unrestricted -scope process -f` to allow the execution of PowerShell scripts just in the current session
 * Make sure httpd.exe is in your path
 * Make sure your Windows user account has full access to the ServerRoot directory as assigned in the main Apache config file
 

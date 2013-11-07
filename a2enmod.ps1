@@ -17,7 +17,7 @@ if($MyInvocation.InvocationName -match "a2(en|dis)(mod|site)"){
     $act = $matches[1]
     $obj = $matches[2]
 } else {
-    write-host $MyInvocation.InvocationName "call not recognized"
+    write-host $MyInvocation.InvocationName " call not recognized"
 }
 
 $run_cfg = httpd -D DUMP_RUN_CFG
@@ -34,12 +34,12 @@ $mod_dir = $ServerRoot + "\modules"
 # Find the main configuration file
 httpd -V | foreach{
     if($_ -match "-D SERVER_CONFIG_FILE=\W(.*)\W"){
-        $conf = $ServerRoot + "/" + $matches[1]
+        $conf = $ServerRoot + "\" + $matches[1]
     }
 }
 
-if(!$conf){ 
-    write-host -foregroundcolor RED -backgroundcolor BLACK "httpd configuration directory could not be found"
+if(!(get-item $conf)){ 
+    write-host -foregroundcolor RED -backgroundcolor BLACK "httpd configuration file could not be found"
     exit 
 } else {
     $conf = get-item $conf

@@ -21,7 +21,7 @@ To use the `a2enmod`, `a2dismod`, `a2ensite`, and `a2dissite` commands, make sur
 * Run Powershell as an Administrator
 * Run the command `Set-Executionpolicy Unrestricted -Scope Process -Force` to allow the execution of PowerShell scripts just in the current session
 * Make sure httpd.exe is in your path
-* Make sure your Windows user account has full access to the ServerRoot directory as assigned in the main Apache config file
+* Make sure your Windows user account has write access to the ServerRoot directory as assigned in the main Apache config file as it may create directories underneath the ServerRoot.
 
 Be sure to add the directory containing the script and symbolic links to your user or system environment path variable so that you can refer to the commands from anywhere.
 

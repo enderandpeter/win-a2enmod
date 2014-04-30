@@ -34,7 +34,7 @@ Be sure to add the directory containing the script and symbolic links to your us
 * _copy_ - A new module will be added and the file will be copied to the default modules directory.
 * _norestart_ - Don't restart the web server on completion
 
-Locates the specified module and uncomments its LoadModule line to enable it. A new module will be added if a path to a valid file is passed to `-search`. The new LoadModule line will be appended to the long list of enabled and disabled lines that usually comes with Windows Apache. `-copy`. will make a copy in the default modules folder. If `-mod` names a newly added module, it must be the same name specified by the module file. If referring to a module already specifed in the conf, it may be named by either the part before `_module`, the full module name, filename, or basename (filename without extension).
+Locates the specified module and uncomments its LoadModule line to enable it. A new module will be added if a path to a valid file is passed to `-search`. The new LoadModule line will be appended to the long list of enabled and disabled lines that usually comes with Apache. `-copy`. will make a copy in the default modules folder. If `-mod` names a newly added module, it must be the same name specified by the module file. If referring to a module already specifed in the conf, it may be named by either the part before `_module`, the full module name, filename, or basename (filename without extension).
 	
   __a2dismod [[-m[od]] \<String\> [-n[orestart]]]__
 * _mod_ - The module to disable

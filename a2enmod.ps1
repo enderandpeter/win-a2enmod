@@ -96,7 +96,7 @@ Add the Include line for enabled sites to the bottom of the main config
 if it isn't already there
 #>
 Function includeSiteDir{
-    $includeline = "IncludeOptional $($conf_dir.name)/*-enabled/"
+    $includeline = "IncludeOptional $($conf_dir.name)/sites-*/"
     (Get-Content $conf) | ForEach { 
         If($_.Contains($includeline)){
             $hasline = $true

@@ -167,7 +167,7 @@ switch($obj){
         #>
         Function getModuleInfo{
             (Get-Content $conf) | ForEach {
-                If($_ -match '\s*[#]?\s*(?<enable>LoadModule (?<modname>.*) (?<path>.*))'){
+                If($_ -match '\s*[#]?\s*(?<enable>LoadModule (?<modname>\w*) (?<path>.*))'){
                      <#
                      If the path part of the LoadModule line begins with quotes, it is an absolute
                      path to the module file. Otherwise, it is a relative path underneath ServerRoot.
